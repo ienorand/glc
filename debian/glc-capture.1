@@ -1,0 +1,140 @@
+.TH GLC-CAPTURE "1" "May 2011" "glc version 0.5.8" "glc Manual"
+.SH NAME
+glc-capture \- ALSA & OpenGL video capture tool
+.SH SYNOPSIS
+.B glc\-capture
+[capture option]... [application] [application argument]...
+.SH DESCRIPTION
+glc is an ALSA & OpenGL capture tool for Linux. It consists of a generic video capture, playback and processing library and a set of tools built around that library. glc should be able to capture any application that uses ALSA for sound and OpenGL for drawing. It is still a relatively new project but already has a long list of features.
+.PP
+glc is inspired by yukon (another, excellent real-time video capture tool for Linux) and Fraps (a popular Windows tool for the same purpose).
+.SH OPTIONS
+\fB\-o\fR, \fB\-\-out\fR=\fIFILE\fR
+write to FILE
+.IP
+following tags are available:
+.br
+%app%:     application name
+.br
+%pid%:     process ID
+.br
+%capture%: counter
+.br
+%year%:    4\-digit year
+.br
+%month%:   2\-digit month
+.br
+%day%:     2\-digit day
+.br
+%hour%:    2\-digit hour
+.br
+%min%:     2\-digit minute
+.br
+%sec%:     2\-digit second
+.IP
+default value is %app%\-%pid%\-%capture%.glc
+.TP
+\fB\-f\fR, \fB\-\-fps\fR=\fIFPS\fR
+capture at FPS, default value is 30
+.TP
+\fB\-r\fR, \fB\-\-resize\fR=\fIFACTOR\fR
+resize pictures with scale factor FACTOR
+.TP
+\fB\-c\fR, \fB\-\-crop\fR=\fIWxH\fR+X+Y
+capture only [width]x[height][+[x][+[y]]]
+.TP
+\fB\-a\fR, \fB\-\-record\-audio\fR=\fICONFIG\fR
+record specified alsa devices
+format is device,rate,channels;device2...
+.TP
+\fB\-s\fR, \fB\-\-start\fR
+start capturing immediately
+.TP
+\fB\-e\fR, \fB\-\-colorspace\fR=\fICSP\fR
+keep as 'bgr' or convert to '420jpeg'
+default value is '420jpeg'
+.TP
+\fB\-k\fR, \fB\-\-hotkey\fR=\fIHOTKEY\fR
+capture hotkey, <Ctrl> and <Shift> modifiers are
+supported, default hotkey is '<Shift>F8'
+.TP
+\fB\-\-reload\fR=\fIHOTKEY\fR
+reload hotkey, switches to next capture file
+default reload key is '<Shift>F9'
+.TP
+\fB\-n\fR, \fB\-\-lock\-fps\fR
+lock fps when capturing
+.TP
+\fB\-\-pbo\fR
+use GL_ARB_pixel_buffer_object if available
+.TP
+\fB\-z\fR, \fB\-\-compression\fR=\fIMETHOD\fR
+compress stream using METHOD
+\&'none', 'quicklz' and 'lzo' are supported
+\&'quicklz' is used by default
+.TP
+\fB\-\-sync\fR
+force synchronized write mode
+.TP
+\fB\-\-byte\-aligned\fR
+use GL_PACK_ALIGNMENT 1 instead of 8
+.TP
+\fB\-i\fR, \fB\-\-draw\-indicator\fR
+draw indicator when capturing
+indicator does not work with \fB\-b\fR 'front'
+.TP
+\fB\-v\fR, \fB\-\-log\fR=\fILEVEL\fR
+log >=LEVEL messages
+0: errors
+1: warnings
+2: performance information
+3: information
+4: debug
+.TP
+\fB\-l\fR, \fB\-\-log\-file\fR=\fIFILE\fR
+write log to FILE, pid\-%d.log by default
+.TP
+\fB\-\-audio\-skip\fR
+skip audio packets if buffer is full
+or capture thread is busy
+.TP
+\fB\-\-disable\-audio\fR
+don't capture audio
+.TP
+\fB\-\-sighandler\fR
+use custom signal handler
+.TP
+\fB\-g\fR, \fB\-\-glfinish\fR
+capture at glFinish()
+.TP
+\fB\-j\fR, \fB\-\-force\-sdl\-alsa\-drv\fR
+force SDL to use ALSA audio driver
+.TP
+\fB\-b\fR, \fB\-\-capture\fR=\fIBUFFER\fR
+capture 'front' or 'back' buffer
+default is 'front'
+.TP
+\fB\-\-compressed\fR=\fISIZE\fR
+compressed stream buffer size in MiB
+default is 50 MiB
+.TP
+\fB\-\-uncompressed\fR=\fISIZE\fR
+uncompressed stream buffer size in MiB
+default is 25 MiB
+.TP
+\fB\-\-unscaled\fR=\fISIZE\fR
+unscaled picture stream buffer size in MiB,
+default is 25 MiB
+.TP
+\fB\-V\fR, \fB\-\-version\fR
+print glc version and exit
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+show help
+.SH AUTHORS
+glc was written by Pyry Haulos <pyry.haulos@gmail.com>
+.PP
+This manpage was written by Arand Nash <ienorand@gmail.com> based on the output given by
+.B glc-capture -help
+.SH "SEE ALSO"
+.B glc-play(1)

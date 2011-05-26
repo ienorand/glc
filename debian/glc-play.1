@@ -1,0 +1,76 @@
+.TH GLC-PLAY "1" "May 2011" "glc version 0.5.8" "glc Manual"
+.SH NAME
+glc-play \- raw glc file format player/encoder
+.SH SYNOPSIS
+glc\-play [file] [option]...
+.SH DESCRIPTION
+glc is an ALSA & OpenGL capture tool for Linux. It consists of a generic video capture, playback and processing library and a set of tools built around that library. glc should be able to capture any application that uses ALSA for sound and OpenGL for drawing. It is still a relatively new project but already has a long list of features.
+.PP
+glc is inspired by yukon (another, excellent real-time video capture tool for Linux) and Fraps (a popular Windows tool for the same purpose).
+.SH OPTIONS
+\fB\-i\fR, \fB\-\-info\fR=\fILEVEL\fR
+show stream information, LEVEL must be
+greater than 0
+.TP
+\fB\-a\fR, \fB\-\-wav\fR=\fINUM\fR
+save audio stream NUM in wav format
+.TP
+\fB\-b\fR, \fB\-\-bmp\fR=\fINUM\fR
+save frames from stream NUM as bmp files
+(use \fB\-o\fR pic\-%010d.bmp f.ex.)
+.TP
+\fB\-p\fR, \fB\-\-png\fR=\fINUM\fR
+save frames from stream NUM as png files
+.TP
+\fB\-y\fR, \fB\-\-yuv4mpeg\fR=\fINUM\fR
+save video stream NUM in yuv4mpeg format
+.TP
+\fB\-o\fR, \fB\-\-out\fR=\fIFILE\fR
+write to FILE
+.TP
+\fB\-f\fR, \fB\-\-fps\fR=\fIFPS\fR
+save images or video at FPS
+.TP
+\fB\-r\fR, \fB\-\-resize\fR=\fIVAL\fR
+resize pictures with scale factor VAL or WxH
+.TP
+\fB\-g\fR, \fB\-\-color\fR=\fIADJUST\fR
+adjust colors
+format is brightness;contrast;red;green;blue
+.TP
+\fB\-l\fR, \fB\-\-silence\fR=\fISECONDS\fR
+audio silence threshold in seconds
+default threshold is 0.2
+.TP
+\fB\-d\fR, \fB\-\-alsa\-device\fR=\fIDEV\fR
+alsa playback device name
+default is 'default'
+.TP
+\fB\-t\fR, \fB\-\-streaming\fR
+streaming mode (eg. don't interpolate data)
+.TP
+\fB\-c\fR, \fB\-\-compressed\fR=\fISIZE\fR
+compressed stream buffer size in MiB
+default is 10 MiB
+.TP
+\fB\-u\fR, \fB\-\-uncompressed\fR=\fISIZE\fR
+uncompressed stream buffer size in MiB
+default is 10 MiB
+.TP
+\fB\-s\fR, \fB\-\-show\fR=\fIVAL\fR
+show stream summary value, possible values are:
+all, signature, version, flags, fps,
+pid, name, date
+.TP
+\fB\-v\fR, \fB\-\-verbosity\fR=\fILEVEL\fR
+verbosity level
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+show help
+.SH AUTHORS
+glc was written by Pyry Haulos <pyry.haulos@gmail.com>
+.PP
+This manpage was written by Arand Nash <ienorand@gmail.com> based on the output given by
+.B glc-play -help
+.SH "SEE ALSO"
+.B glc-capture(1)
