@@ -1,0 +1,42 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -12,13 +12,13 @@
+ 
+ OPTION(QUICKLZ
+        "QuickLZ support"
+-       ON)
++       OFF)
+ OPTION(LZO
+        "LZO support"
+        ON)
+ OPTION(LZJB
+        "LZJB support"
+-       ON)
++       OFF)
+ OPTION(BINARIES
+        "Build and install glc-capture and glc-play"
+        ON)
+--- a/src/glc/CMakeLists.txt
++++ b/src/glc/CMakeLists.txt
+@@ -98,11 +98,16 @@
+ 
+ IF (LZO)
+   ADD_DEFINITIONS(-D__MINILZO)
+-  INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/support/minilzo)
+-  SET(LZO_SRC ${PROJECT_SOURCE_DIR}/support/minilzo/minilzo.c
+-  	      ${PROJECT_SOURCE_DIR}/support/minilzo/lzoconf.h
+-  	      ${PROJECT_SOURCE_DIR}/support/minilzo/lzodefs.h
+-  	      ${PROJECT_SOURCE_DIR}/support/minilzo/minilzo.h)
++#  INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/support/minilzo)
++#  SET(LZO_SRC ${PROJECT_SOURCE_DIR}/support/minilzo/minilzo.c
++#  	      ${PROJECT_SOURCE_DIR}/support/minilzo/lzoconf.h
++#  	      ${PROJECT_SOURCE_DIR}/support/minilzo/lzodefs.h
++#  	      ${PROJECT_SOURCE_DIR}/support/minilzo/minilzo.h)
++  INCLUDE_DIRECTORIES(/usr/share/lzo/minilzo)
++  SET(LZO_SRC /usr/share/lzo/minilzo/minilzo.c
++  	      /usr/share/lzo/minilzo/lzoconf.h
++  	      /usr/share/lzo/minilzo/lzodefs.h
++  	      /usr/share/lzo/minilzo/minilzo.h)
+ ENDIF (LZO)
+ 
+ IF (LZJB)
