@@ -1,0 +1,5 @@
+glc (0.5.8-1) unstable; urgency=low
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- Arand Nash <ienorand@gmail.com>  Thu, 26 May 2011 16:42:37 +0100
