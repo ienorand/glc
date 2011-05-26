@@ -11,7 +11,7 @@ Homepage: https://github.com/nullkey/glc
 Package: glc
 Section: video
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libglc0 (= ${binary:Version})
+Depends: ${shlibs:Depends}, ${misc:Depends}, libglc-capture0 (= ${binary:Version}), libglc-capture-dev
 Description: ALSA & OpenGL capture tool for Linux
  glc is an ALSA & OpenGL capture tool for Linux. It consists of a generic video
  capture, playback and processing library and a set of tools built around that
@@ -25,7 +25,7 @@ Description: ALSA & OpenGL capture tool for Linux
 Package: libglc-capture-dev
 Section: libdevel
 Architecture: any
-Depends: ${misc:Depends}, libglc0 (= ${binary:Version})
+Depends: ${misc:Depends}, libglc-capture0 (= ${binary:Version})
 Description: ALSA & OpenGL capture tool for Linux
  glc is an ALSA & OpenGL capture tool for Linux. It consists of a generic video
  capture, playback and processing library and a set of tools built around that
