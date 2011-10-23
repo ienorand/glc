@@ -1,8 +1,8 @@
 Source: glc
 Priority: extra
 Maintainer: Arand Nash <ienorand@gmail.com>
-Build-Depends: debhelper (>= 8), cmake, libxxf86vm-dev, libpacketstream0-dev,
- libelfhacks0-dev, liblzo2-dev, libpng12-dev, libasound2-dev, libgl1-mesa-dev
+Build-Depends: debhelper (>= 8), cmake, libxxf86vm-dev, libpacketstream-dev,
+ libelfhacks-dev, liblzo2-dev, libpng12-dev, libasound2-dev, libgl1-mesa-dev
 Standards-Version: 3.9.2
 Section: video
 Homepage: https://github.com/nullkey/glc
