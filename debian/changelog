@@ -1,5 +1,5 @@
-glc (0.5.8-1) unstable; urgency=low
+glc (0.5.8-1~ppa1) precise; urgency=low
 
-  * Initial release (Closes: #627560)
+  * Initial release to PPA
 
- -- Arand Nash <ienorand@gmail.com>  Thu, 26 May 2011 17:10:35 +0100
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Mon, 16 Jan 2012 15:41:56 +0100

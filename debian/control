@@ -1,6 +1,6 @@
 Source: glc
 Priority: extra
-Maintainer: Arand Nash <ienorand@gmail.com>
+Maintainer: Martin Erik Werner <martinerikwerner@gmail.com>
 Build-Depends: cmake,
                debhelper (>= 8),
                libasound2-dev,
@@ -13,8 +13,6 @@ Build-Depends: cmake,
 Standards-Version: 3.9.2
 Section: video
 Homepage: https://github.com/nullkey/glc
-#Vcs-Git: git://git.debian.org/collab-maint/glc.git
-#Vcs-Browser: http://git.debian.org/?p=collab-maint/glc.git;a=summary
 
 Package: glc
 Section: video
