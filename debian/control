@@ -1,8 +1,15 @@
 Source: glc
 Priority: extra
 Maintainer: Arand Nash <ienorand@gmail.com>
-Build-Depends: debhelper (>= 8), cmake, libxxf86vm-dev, libpacketstream-dev,
- libelfhacks-dev, liblzo2-dev, libpng12-dev, libasound2-dev, libgl1-mesa-dev
+Build-Depends: cmake,
+               debhelper (>= 8),
+               libasound2-dev,
+               libelfhacks-dev,
+               libgl1-mesa-dev,
+               liblzo2-dev,
+               libpacketstream-dev,
+               libpng12-dev,
+               libxxf86vm-dev
 Standards-Version: 3.9.2
 Section: video
 Homepage: https://github.com/nullkey/glc
@@ -12,8 +19,10 @@ Homepage: https://github.com/nullkey/glc
 Package: glc
 Section: video
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends},
- libglc-capture0 (= ${binary:Version}), libglc-capture-dev
+Depends: libglc-capture-dev,
+         libglc-capture0 (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: ALSA & OpenGL capture tool for Linux
  glc is an ALSA & OpenGL capture tool for Linux. It consists of a generic video
  capture, playback and processing library and a set of tools built around that
@@ -27,7 +36,7 @@ Description: ALSA & OpenGL capture tool for Linux
 Package: libglc-capture-dev
 Section: libdevel
 Architecture: any
-Depends: ${misc:Depends}, libglc-capture0 (= ${binary:Version})
+Depends: libglc-capture0 (= ${binary:Version}), ${misc:Depends}
 Description: ALSA & OpenGL capture tool for Linux
  glc is an ALSA & OpenGL capture tool for Linux. It consists of a generic video
  capture, playback and processing library and a set of tools built around that
@@ -43,7 +52,7 @@ Description: ALSA & OpenGL capture tool for Linux
 Package: libglc-capture0
 Section: libs
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: ALSA & OpenGL capture tool for Linux
  glc is an ALSA & OpenGL capture tool for Linux. It consists of a generic video
  capture, playback and processing library and a set of tools built around that
