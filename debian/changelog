@@ -1,3 +1,9 @@
+glc (0.5.8-1~ppa1~oneiric1) oneiric; urgency=low
+
+  * PPA build for oneiric
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Sun, 29 Jan 2012 00:00:00 +0100
+
 glc (0.5.8-1~ppa1) precise; urgency=low
 
   * Initial release to PPA
